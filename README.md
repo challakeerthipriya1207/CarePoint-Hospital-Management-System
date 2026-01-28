@@ -8,11 +8,11 @@
 
 | **Landing Page** | **Interactive Booking Portal** |
 |:---:|:---:|
-| ![Landing Page](screenshots/home.png) | ![Booking Form](screenshots/booking.png) |
+| ![Landing Page](Landing.png) | ![Booking Form](Booking-form.png) |
 
 | **Razorpay Payment Integration** | **Staff Admin Console** |
 |:---:|:---:|
-| ![Payment Gateway](screenshots/payment.png) | ![Admin Dashboard](screenshots/admin.png) |
+| ![Payment Gateway](Payment-status.png) | ![Admin Dashboard](Admin_dashboard.png) |
 
 ---
 
