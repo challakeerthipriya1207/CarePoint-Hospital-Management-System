@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePoint Hospital | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="home-body">
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-heartbeat"></i> CarePoint Hospital
+        </div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="doctors.html">Doctors</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Your Health, Our Priority</h1>
+            <p>Advanced medical care with a personal touch. Book your appointment today or manage hospital operations securely.</p>
+        </div>
+    </header>
+
+    <section class="role-selection">
+        <div class="card-container">
+            <div class="role-card" onclick="window.location.href='index.html'">
+                <div class="icon-box patient-icon">
+                    <i class="fas fa-user-injured"></i>
+                </div>
+                <h3>Patient Portal</h3>
+                <p>Book an appointment, check doctor availability, and view fees.</p>
+                <button class="btn-role">Book Appointment</button>
+            </div>
+
+            <div class="role-card staff-card" onclick="window.location.href='login.html'">
+                <div class="icon-box staff-icon">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <h3>Staff Console</h3>
+                <p>Authorized personnel only. Manage appointments and triage.</p>
+                <button class="btn-role btn-staff">Staff Login</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 CarePoint Hospital. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

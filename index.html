@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | CarePoint Hospital</title>
+    
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="booking-container">
+        <h2>Patient Appointment Portal</h2>
+        <form id="bookingForm">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="name" placeholder="e.g. John Doe" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="e.g. john@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1234567890" required>
+                </div>
+                <div class="input-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="input-group">
+                    <label for="bloodGroup">Blood Group</label>
+                    <select id="bloodGroup" name="bloodGroup" required>
+                        <option value="">Select Blood Group</option>
+                        <option value="A+">A+</option><option value="A-">A-</option>
+                        <option value="B+">B+</option><option value="B-">B-</option>
+                        <option value="O+">O+</option><option value="O-">O-</option>
+                        <option value="AB+">AB+</option><option value="AB-">AB-</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="appDate">Appointment Date</label>
+                    <input type="date" name="appointmentDate" id="appDate" required>
+                </div>
+            </div>
+
+            <div class="triage-section full-width">
+                <label>Quick Triage: Click the area of concern</label>
+                <div class="body-map-container">
+                    <svg viewBox="0 0 200 400" class="body-map">
+                        <circle cx="100" cy="45" r="30" class="body-part" data-dept="Neurology" pointer-events="all">
+                            <title>Head / Neurology</title>
+                        </circle>
+                        <rect x="60" y="85" width="80" height="100" class="body-part" data-dept="Cardiology" pointer-events="all">
+                            <title>Chest / Cardiology</title>
+                        </rect>
+                        <rect x="25" y="85" width="30" height="150" class="body-part" data-dept="General Medicine" pointer-events="all"></rect>
+                        <rect x="145" y="85" width="30" height="150" class="body-part" data-dept="General Medicine" pointer-events="all"></rect>
+                        <rect x="60" y="200" width="35" height="180" class="body-part" data-dept="Orthopedics" pointer-events="all"></rect>
+                        <rect x="105" y="200" width="35" height="180" class="body-part" data-dept="Orthopedics" pointer-events="all"></rect>
+                    </svg>
+                </div>
+                <p class="triage-hint">Clicking a body part auto-selects the Department and Doctor list.</p>
+            </div>
+
+            <div class="form-grid">
+                <div class="input-group">
+                    <label for="deptSelect">Hospital Department</label>
+                    <select name="department" id="deptSelect" required>
+                        <option value="">Select Department</option>
+                        <option value="General Medicine">General Medicine</option>
+                        <option value="Cardiology">Cardiology</option>
+                        <option value="Neurology">Neurology</option>
+                        <option value="Dermatology">Dermatology</option>
+                        <option value="Orthopedics">Orthopedics</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="docSelect">Select Doctor</label>
+                    <select name="doctor" id="docSelect" required disabled>
+                        <option value="">Select Doctor</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="severity">Urgency Level</label>
+                    <select id="severity" name="severity" required>
+                        <option value="">Select Urgency</option>
+                        <option value="Low">Low (Routine Checkup)</option>
+                        <option value="Medium">Medium (Symptoms)</option>
+                        <option value="High">High (Emergency)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group full-width">
+                <label for="address">Residential Address</label>
+                <div class="geo-wrapper">
+                    <textarea id="address" name="address" placeholder="Full Home Address" required></textarea>
+                    <button type="button" id="geoBtn" class="geo-btn" title="Use Current Location">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                </div>
+                <p id="geoStatus" class="geo-status" style="display: none;">Locating...</p>
+            </div>
+
+            <div class="input-group full-width">
+                <label for="symptoms">Description of Symptoms</label>
+                <textarea id="symptoms" name="symptoms" placeholder="Describe your symptoms (e.g. chest pain, fever)..." required></textarea>
+                <p id="urgencyNotice" class="urgency-msg" style="display: none; color: #e74c3c; font-weight: bold; margin-top: 5px; font-size: 13px;">
+                    ⚠️ Critical symptoms detected. Priority auto-set to High.
+                </p>
+            </div>
+
+            <div id="feeDisplay" class="fee-box">Consultation Fee: ₹0</div>
+            <button type="submit" class="btn-submit">Confirm Booking</button>
+        </form>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>

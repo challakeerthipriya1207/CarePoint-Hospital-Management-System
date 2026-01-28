@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Console | CarePoint Hospital</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-body">
+    <header class="admin-header">
+        <div class="header-top">
+            <h1 data-i18n="admin_title">Staff Management Console</h1>
+            <div class="accessibility-tools">
+                <button id="darkModeToggle" class="tool-btn" title="Toggle Theme">
+                    <span id="themeIcon">☀️</span>
+                </button>
+                <select id="langSelect" class="tool-select">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी (Hindi)</option>
+                    <option value="te">తెలుగు (Telugu)</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="admin-tools">
+            <div class="tool-item">
+                <label data-i18n="label_status">Status</label>
+                <select id="statusMainFilter" class="admin-input">
+                    <option value="pending" data-i18n="status_pending">🟡 Pending</option>
+                    <option value="confirmed" data-i18n="status_confirmed">🟢 Confirmed</option>
+                    <option value="cancelled" data-i18n="status_cancelled">🔴 Cancelled</option>
+                </select>
+            </div>
+            <div class="tool-item">
+                <label data-i18n="label_date">Search by Date</label>
+                <input type="date" id="dateSearch" class="admin-input">
+            </div>
+            <div class="tool-item">
+                <label data-i18n="label_blood">Search by Blood Group</label>
+                <select id="bloodFilter" class="admin-input">
+                    <option value="">All Groups</option>
+                    <option value="A+">A+</option><option value="A-">A-</option>
+                    <option value="B+">B+</option><option value="B-">B-</option>
+                    <option value="O+">O+</option><option value="O-">O-</option>
+                    <option value="AB+">AB+</option><option value="AB-">AB-</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th data-i18n="col_priority">Priority</th>
+                    <th data-i18n="col_patient">Patient Details</th>
+                    <th data-i18n="col_date">Appt. Date</th>
+                    <th data-i18n="col_team">Medical Team</th>
+                    <th data-i18n="col_address">Address</th>
+                    <th data-i18n="col_action">Action</th>
+                </tr>
+            </thead>
+            <tbody id="appointmentTableBody">
+                </tbody>
+        </table>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
